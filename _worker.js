@@ -2,15 +2,12 @@
 // @ts-ignore
 import { connect } from 'cloudflare:sockets';
 
-// How to generate your own UUID:
-// [Windows] Press "Win + R", input cmd and run:  Powershell -NoExit -Command "[guid]::NewGuid()"
 let userID = 'dff014f7-247d-44c3-805c-7a08ac640b6d';
 
 let proxyIP = 'cdn.xn--b6gac.eu.org';
 
-let dohURL = 'https://sky.rethinkdns.com/1:-Pf_____9_8A_AMAIgE8kMABVDDmKOHTAKg='; // https://cloudflare-dns.com/dns-query or https://dns.google/dns-query
+let dohURL = 'https://cloudflare-dns.com/dns-query';
 
-// v2board api environment variables
 let nodeId = ''; // 1
 
 let apiToken = ''; //abcdefghijklmnopqrstuvwxyz123456
@@ -18,7 +15,7 @@ let apiToken = ''; //abcdefghijklmnopqrstuvwxyz123456
 let apiHost = ''; // api.v2board.com
 
 if (!isValidUUID(userID)) {
-	throw new Error('uuid is not valid');
+	throw new Error('uuid is invalid');
 }
 
 export default {
@@ -63,9 +60,6 @@ export default {
 		}
 	},
 };
-
-
-
 
 /**
  * 
@@ -340,9 +334,6 @@ function makeReadableWebSocketStream(webSocketServer, earlyDataHeader, log) {
 
 }
 
-// https://xtls.github.io/development/protocols/vless.html
-// https://github.com/zizifn/excalidraw-backup/blob/main/v2ray-protocol.excalidraw
-
 /**
  * 
  * @param { ArrayBuffer} vlessBuffer 
@@ -460,7 +451,6 @@ function processVlessHeader(
 		isUDP,
 	};
 }
-
 
 /**
  * 
@@ -592,7 +582,6 @@ function stringify(arr, offset = 0) {
 	}
 	return uuid;
 }
-
 
 /**
  * 
