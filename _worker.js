@@ -75,8 +75,7 @@ export default {
 						return bestipresponse
 					}
 					default:
-						const hostnames = ['www.cctv。com'];
-						url.hostname = hostnames;
+						url.hostname = 'www.cctv。com';
 						url.protocol = 'https:';
 
 						const newHeaders = new Headers(request.headers);
