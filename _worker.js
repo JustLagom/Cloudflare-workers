@@ -2,7 +2,7 @@
 // @ts-ignore
 import { connect } from 'cloudflare:sockets';
 
-let userID = '需自定义uuid';
+let userID = 'fd57abd1-91eb-4323-aa5e-f1abf7c94d95';//需自定义uuid
 
 const proxyIPs = ['cdn-all.xn--b6gac.eu.org', 'cdn.xn--b6gac.eu.org', 'cdn-b100.xn--b6gac.eu.org', 'edgetunnel.anycast.eu.org', 'cdn.anycast.eu.org'];
 
@@ -703,7 +703,7 @@ async function handleUDPOutBound(webSocket, vlessResponseHeader, log) {
  * @returns {string}
  */
 function getVLESSConfig(userIDs, hostName) {
-	const commonUrlPart = `:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048#${hostName}`;
+	const commonUrlPart = `:443?encryption=none&security=tls&sni=${hostName}&fp=chrome&type=ws&host=${hostName}&path=%2F%3Fed%3D2048#${hostName}`;
 	const separator = "---------------------------------------------------------------";
 	const hashSeparator = "################################################################";
 
