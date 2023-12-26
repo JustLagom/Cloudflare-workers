@@ -828,7 +828,7 @@ function createVLESSSub(userID_Path, hostName) {
 		if (!hostName.includes('pages.dev')) {
 			// Iterate over all ports for http
 			portArray_http.forEach((port) => {
-				const commonUrlPart_http = `:${port}?encryption=none&security=none&fp=random&type=ws&host=${hostName}&path=%2F%3Fed%3D2048#${hostName}-HTTP-${port}`;
+				const commonUrlPart_http = `:${port}?encryption=none&security=none&fp=chrome&type=ws&host=${hostName}&path=%2F%3Fed%3D2048#${hostName}-HTTP-${port}`;
 				const vlessMainHttp = `vless://${userID}@${hostName}${commonUrlPart_http}`;
 
 				// For each proxy IP, generate a VLESS configuration and add to output
@@ -841,7 +841,7 @@ function createVLESSSub(userID_Path, hostName) {
 		}
 		// Iterate over all ports for https
 		portArray_https.forEach((port) => {
-			const commonUrlPart_https = `:${port}?encryption=none&security=tls&sni=${hostName}&fp=random&type=ws&host=${hostName}&path=%2F%3Fed%3D2048#${hostName}-HTTPS-${port}`;
+			const commonUrlPart_https = `:${port}?encryption=none&security=tls&sni=${hostName}&fp=chrome&type=ws&host=${hostName}&path=%2F%3Fed%3D2048#${hostName}-HTTPS-${port}`;
 			const vlessMainHttps = `vless://${userID}@${hostName}${commonUrlPart_https}`;
 
 			// For each proxy IP, generate a VLESS configuration and add to output
