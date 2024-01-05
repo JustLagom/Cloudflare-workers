@@ -8,7 +8,7 @@ const proxyIPs = ["23.162.136.169"]; // ['cdn-all.xn--b6gac.eu.org', 'cdn.xn--b6
 
 let proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
 
-let dohURL = 'https://sky.rethinkdns.com/1:-Pf_____9_8A_AMAIgE8kMABVDDmKOHTAKg='; // https://cloudflare-dns.com/dns-query or https://dns.google/dns-query
+let dohURL = 'https://sky.rethinkdns.com/1:-Pf_____9_8A_AMAIgE8kMABVDDmKOHTAKg=';
 
 let nodeId = ''; // 1
 
@@ -97,8 +97,6 @@ export default {
 						});
 					}
 					default:
-						// return new Response('Not found', { status: 404 });
-						// For any other path, reverse proxy to 'www.fmprc.gov.cn' and return the original response
 						url.hostname = 'www.cctv.com';
 						url.protocol = 'https:';
 						request = new Request(url, request);
